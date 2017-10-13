@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css" media="screen,projection">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/styles.css" rel="stylesheet">
+
+   
+    <title>@ViewBag.Title -Ticket App</title>
+    <style>
+        nav ul a{
+    font-size: 17px;
+}
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+   
+
+</head>
+<body style="background: #CCCCCC;">
+
+
+    <div class="navbar-fixed"  style="font-size: 20px;">
+        <nav style="background-color:#00bcd4; font-size: 20px;">
+            <div class="nav-wrapper"  style="font-size: 20px;">
+                <a href="#!" class="brand-logo"> <i class="material-icons md-36">home</i>Home</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down" style="font-size: 20px;">
+                    <li style="font-size: 20px;">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li style="font-size: 20px;">@Html.ActionLink("About", "About", "Home")</li>
+                    <li style="font-size: 20px;">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                 
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <div class="navbar  navbar-fixed-top" style="background-color: white; color: black;">
+        <div class="container" style="background-color: white; color: black;">
+            <div class="navbar-header navbar-right" style="background-color: white; color: black;">
+             
+                @Html.ActionLink("Ticket Application", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" , style =" text-align: right;"})
+                <!-- Compiled and minified CSS 
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Signin", "Signin", "Auth")</li>
+
+                </ul>
+                    -->
+            </div>
+           
+        </div>
+    </div>
+    <div class="" >
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -TicketApp</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+   
+
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+
+        })
+    </script>
+</body>
+</html>

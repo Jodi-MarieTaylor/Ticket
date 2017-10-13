@@ -1,0 +1,231 @@
+﻿@model Ticketv1.Models.User
+
+@{
+    ViewBag.Title = "signup";
+}
+
+@using (Html.BeginForm("signup2", "Auth", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+     <!--Form Advance-->
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel  z-depth-5" style="border-radius:5px;">
+                <div class="row">
+                    <form class="login-form">
+                        <div class="row">
+                            <div class="input-field col s12 center">
+                                <h3>Promoter Registration Form</h3>
+                                <p class="center">Join to our community now !</p>
+                            </div>
+                        </div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div  class=" s12" style="  width: 40%; margin: 0 auto; ">
+
+                            <div class="row">
+                                <div class="input-field col s12" style="font-size: 20px;">
+                                    <i class="material-icons  prefix">face</i>
+                                    <label for="model.firstname" class="center-align" style="font-size: 13px; ">Firstname</label>
+
+                                    @Html.EditorFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control", style = "font-size: 20px;" } })
+                                    @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+
+                                </div>
+
+                            </div>
+                            <div class="row ">
+                                <div class="input-field col s12">
+                                    <i class="material-icons  prefix">face</i>
+                                    <label for="model.lastname" class="center-align" style="font-size: 13px; ">Lastname</label>
+
+                                    @Html.EditorFor(model => model.lastname, new { htmlAttributes = new { @class = "form-control", style = "font-size: 20px;" } })
+                                    @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                           
+
+                            <div class="row">
+                                <div class="input-field col s12" style="font-size: 20px;">
+                                    <i class="material-icons  prefix">email</i>
+                                    <label for="model.email" class="center-align" style="font-size: 13px; ">Email</label>
+
+                                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", style = "font-size: 20px;" } })
+                                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+
+                                </div>
+
+                            </div>
+                          
+                           
+                            <div class="row">
+                                <div class="input-field col s12" style="font-size: 20px;">
+                                    <i class="material-icons  prefix">lock</i>
+                                    <label for="model.password" class="center-align" style="font-size: 13px; ">Password</label>
+
+                                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", Type = "password", style = "font-size: 20px;" } })
+                                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="row ">
+                                <div class="input-field col s12">
+                                    <i class="material-icons  prefix">lock</i>
+
+                                    <input id="password-again" type="password">
+                                    <label for="password-again" style="font-size: 13px; text-align:center;">Password again</label>
+                                </div>
+                            </div>
+                            <div class="row center">
+                                <div class="input-field col s12 center">
+
+                                    <input type="submit" value="Register Now" class="btn waves-effect waves-light col s6 center" />
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <p class="margin center medium-small sign-up">Already have an account? <a href="page-login.html">Login</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                  
+                   
+                </div>
+            </div>
+        </div>
+       
+      
+
+    </div>
+
+   
+}
+
+@using (Html.BeginForm("signup2", "Auth", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div id="login-page" class="row  s12" style="font-size: 20px;; margin: 0 auto;">
+      
+        <div class="col col-sm-6 z-depth-4 card-panel  " style="margin:0 auto;  ">
+            <form class="login-form">
+
+                <div class="row">
+                    <div class="input-field col s12 center">
+                        <h3>Promoter Registration Form</h3>
+                        <p class="center">Join to our community now !</p>
+                    </div>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div style=" width: 80%; margin: 0 auto;" class="col s12 ">
+
+                    <div class="row">
+                        <div class="input-field col s12" style="font-size: 20px;">
+                            <i class="material-icons  prefix">face</i>
+                            <label for="model.firstname" class="center-align" style="font-size: 13px; ">Firstname</label>
+
+                            @Html.EditorFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control", style = "font-size: 20px;" } })
+                            @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+                    <div class="row ">
+                        <div class="input-field col s12">
+                            <i class="material-icons  prefix">face</i>
+                            <label for="model.lastname" class="center-align" style="font-size: 13px; ">Lastname</label>
+
+                            @Html.EditorFor(model => model.lastname, new { htmlAttributes = new { @class = "form-control", style = "font-size: 20px;" } })
+                            @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12" style="font-size: 20px;">
+                            <i class="material-icons  prefix">face</i>
+                            <label for="model.username" class="center-align" style="font-size: 13px; ">Username</label>
+
+                            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", style = "font-size: 20px;" } })
+                            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12" style="font-size: 20px;">
+                            <i class="material-icons  prefix">email</i>
+                            <label for="model.email" class="center-align" style="font-size: 13px; ">Email</label>
+
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", style = "font-size: 20px;" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" style="font-size: 20px;">
+                            <i class="material-icons  prefix">phone</i>
+                            <label for="model.phone" class="center-align" style="font-size: 13px; ">Phone</label>
+
+                            @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control", style = "font-size: 20px;" } })
+                            @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" style="font-size: 20px;">
+                            <i class="material-icons  prefix">add location</i>
+                            <label for="model.address" class="center-align" style="font-size: 13px; ">Address</label>
+
+                            @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" }, style = "font-size: 20px;" })
+                            @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" style="font-size: 20px;">
+                            <i class="material-icons  prefix">lock</i>
+                            <label for="model.password" class="center-align" style="font-size: 13px; ">Password</label>
+
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", Type = "password", style = "font-size: 20px;" } })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <div class="row ">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-lock-outline prefix"></i>
+                            <input id="password-again" type="password">
+                            <label for="password-again" style="font-size: 13px; text-align:center;">Password again</label>
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <div class="input-field col s12 center">
+
+                            <input type="submit" value="Register Now" class="btn waves-effect waves-light col s6 center" />
+                        </div>
+
+                        <div class="input-field col s12">
+                            <p class="margin center medium-small sign-up">Already have an account? <a href="page-login.html">Login</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <img class="responsive-img" src="https://www.w3schools.com/css/img_fjords.jpg">
+      
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
